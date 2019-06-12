@@ -26,3 +26,8 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+
+### Eclipse ###
+.classpath
+.project
