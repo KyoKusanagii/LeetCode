@@ -4,7 +4,6 @@ public class NumberComplement {
         String bin = Integer.toBinaryString(num);
         char [] ch = bin.toCharArray();
         StringBuilder builder = new StringBuilder();
-        boolean isMet1 = false;
         for(int i=0;i<ch.length;i++) {
 
             if (ch[i] == '0') {
