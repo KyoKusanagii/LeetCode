@@ -15,34 +15,42 @@ public class MergekSortedLists {
      * Output: 1->1->2->3->4->4->5->6
      */
 
-    public static void main(String[] args) {
-      ListNode[] a = new ListNode[2];
 
-
-    }
-
-    public static ListNode mergeKLists(ListNode[] lists) {
+    public ListNode mergeKLists(ListNode[] lists) {
         List<Integer> listNum = new ArrayList<>();
-        for(int i=0;i<lists.length;i++){
-            ListNode myNode = lists[i];
-            while(myNode.next != null){
-                listNum.add(myNode.val);
-                int nextNum = myNode.next.val;
-                myNode.next = new ListNode(nextNum);
-                myNode = myNode.next;
-            }
-        }
+        ListNode ans = new ListNode(0),temp,temp2;
+        for (int i = 0; i < lists.length; i++) {
+            out:
+            do {
+                if (lists[i] == null) {
+                    break out;
+                }
+                listNum.add(lists[i].val);
+                if (lists[i].next != null) {
+                    lists[i] = lists[i].next;
+                } else if (lists[i].next == null) {
+                    break out;
+                }
 
-//        Collections.sort(listNum);
-//        ListNode listNode = new ListNode(listNum.get(0));
-//        for(int i = 1;i<listNum.size()-1;i=i+2){
-//            if(subNode == null){
-//                 subNode = new ListNode(listNum.get(i));
-//                 listNode = subNode;
-//            }
-//            listNode.next = new ListNode(listNum.get(i+1));
-//            subNode = subNode.next;
-//        }
-        return null;
+            } while (true);
+        }
+        Collections.sort(listNum);
+        if(listNum.size()==0){
+            return null;
+        } else if(listNum.size()==1){
+            ans.val = listNum.get(0);
+            return ans;
+        }
+        temp = new ListNode(listNum.get(0));
+        for(int i=0;i<listNum.size()-1;i++){
+            temp.next = new ListNode(listNum.get(i+1));
+            if(i==0){
+                ans = temp;
+            }
+            temp2 = temp.next;
+            temp = temp2;
+
+        }
+        return ans;
     }
 }
