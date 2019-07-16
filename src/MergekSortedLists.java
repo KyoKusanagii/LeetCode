@@ -53,4 +53,30 @@ public class MergekSortedLists {
         }
         return ans;
     }
+
+    public static void main(String [] args){
+//        ListNode li = new ListNode(10000);
+//        li.next = new ListNode(3);
+//        ListNode temp = li;
+//        li.next = new ListNode(8);  //如果li重新new 產生新的記憶體空間，那麼temp的參考的li的指標就斷掉了，所以此時無論li怎麼變動，都不會影響temp
+//        li.setVal(8);   //k
+//        System.out.println(temp.val);   //10000
+//        System.out.println(temp.next.val);  //3
+//        System.out.println(li.val); //5
+//        System.out.println(li.next.val); //8
+        MergekSortedLists m = new MergekSortedLists();
+        ListNode [] a = new ListNode[3];
+        a[0] = new ListNode(1);
+        a[0].next = new ListNode(4);
+        a[0].next.next = new ListNode(5);
+        a[1] = new ListNode(1);
+        a[1].next = new ListNode(3);
+        a[1].next.next = new ListNode(4);
+        a[2] = new ListNode(2);
+        a[2].next = new ListNode(6);
+//        a[0] = a[2];
+//        a[2] = a[1];
+        System.out.println(m.mergeKLists(a));
+
+    }
 }
