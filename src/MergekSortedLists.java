@@ -1,15 +1,8 @@
+import bean.ListNode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
 
 public class MergekSortedLists {
     /**
@@ -23,7 +16,7 @@ public class MergekSortedLists {
      */
 
     public static void main(String[] args) {
-      ListNode [] a = new ListNode[2];
+      ListNode[] a = new ListNode[2];
 
 
     }
