@@ -8,7 +8,7 @@ public class ReverseNodesink_Group {
         List<Integer> list = new ArrayList<>();
         List<Integer> reverList = new ArrayList<>();
         ListNode ans = new ListNode(0);
-        ListNode temp1, temp2;
+        ListNode temp1;
         if (head == null) {
             return null;
         }
@@ -44,8 +44,7 @@ public class ReverseNodesink_Group {
             if (i == 0) {
                 ans = temp1;
             }
-            temp2 = temp1.next;
-            temp1 = temp2;
+            temp1 = temp1.next;
         }
         return ans;
     }
